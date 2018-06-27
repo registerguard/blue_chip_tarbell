@@ -1,0 +1,4 @@
+{% for item in data %}
+{% if loop.changed(item.Type) %}<p>{{ item.Type }}</p>{% endif %}
+<p><strong>{{ item.Seller|title }}:</strong> to {{ item.Buyer|title }}: {{ item.Address|title }}; {{ item.Sales_Price }}</p>
+{% endfor %}
