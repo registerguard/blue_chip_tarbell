@@ -21,7 +21,15 @@ def main():
             addr = re.sub(r' BLDG ', ' BLDG. ', addr, 1)
             addr = re.sub(r'(ST|AVE)$', r'\1.', addr)
             addr = re.sub(r' ([NESW]) ', r' \1. ', addr, 1)
+            row['Site Address'] = addr
             print('{}'.format(addr))
+
+        for x in reader:
+            print('x: {}'.format(x))
+        # out_file = open('cleaned.csv', 'w')
+        # with out_file:
+        #     writer = csv.writer(out_file)
+        #     writer.writerows(reader)
 
 if __name__ == "__main__":
     main()
