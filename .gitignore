@@ -1,2 +1,4 @@
 *.pyc
+.DS_Store
 quickstart.py
+_scripts/*.csv
