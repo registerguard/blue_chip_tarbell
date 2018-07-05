@@ -7,6 +7,7 @@ import re
 # https://codereview.stackexchange.com/questions/145511/performing-a-regex-search-and-saving-results-to-csv
 
 def main():
+    cleaned_data = []
     with open('RegisterGuardReports.csv', 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -22,14 +23,13 @@ def main():
             addr = re.sub(r'(ST|AVE)$', r'\1.', addr)
             addr = re.sub(r' ([NESW]) ', r' \1. ', addr, 1)
             row['Site Address'] = addr
-            print('{}'.format(addr))
+            cleaned_data.append(row)
+            print('{}'.format(row['Site Address']))
 
-        for x in reader:
-            print('x: {}'.format(x))
-        # out_file = open('cleaned.csv', 'w')
-        # with out_file:
-        #     writer = csv.writer(out_file)
-        #     writer.writerows(reader)
+        out_file = open('cleaned.csv', 'wb')
+        writer = csv.DictWriter(out_file, fieldnames=reader.fieldnames)
+        writer.writeheader()
+        writer.writerows(cleaned_data)
 
 if __name__ == "__main__":
     main()
