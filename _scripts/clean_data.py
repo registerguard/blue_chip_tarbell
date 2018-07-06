@@ -24,9 +24,9 @@ def main():
             addr = re.sub(r' ([NESW]) ', r' \1. ', addr, 1)
             row['Site Address'] = addr
             cleaned_data.append(row)
-            print('{}'.format(row['Site Address']))
 
-        out_file = open('cleaned.csv', 'wb')
+    # write it out to a new file
+    with open('cleaned.csv', 'wb') as out_file:
         writer = csv.DictWriter(out_file, fieldnames=reader.fieldnames)
         writer.writeheader()
         writer.writerows(cleaned_data)

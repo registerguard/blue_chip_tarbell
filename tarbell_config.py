@@ -5,7 +5,10 @@ Tarbell project configuration
 """
 
 # Google spreadsheet key
-SPREADSHEET_KEY = "1xJFcHYk5Devh-_a53nV1qk-iDsbQTrGFvN5aeDTXSfI"
+# May Lane County sales
+# SPREADSHEET_KEY = "1xJFcHYk5Devh-_a53nV1qk-iDsbQTrGFvN5aeDTXSfI"
+# Eugene building permits
+SPREADSHEET_KEY = "1eKM5T3WxnDCOPRgpjmzSZ-GEVUoDt6ddhk6y80CNL0c"
 
 # Exclude these files from publication
 EXCLUDES = ["*.md", "requirements.txt"]
