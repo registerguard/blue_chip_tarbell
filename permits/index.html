@@ -1,0 +1,4 @@
+{% for item in data %}
+{% if loop.changed(item.Category) %}<p><strong>{{ item.Category }}</strong></p>{% endif %}
+<p><strong>{{ item.Owner_Name|title }}:</strong> {{ item.Site_Address|title }}: {{ item.Project_Description }}: {{ item.Value }}.</p>
+{% endfor %}
