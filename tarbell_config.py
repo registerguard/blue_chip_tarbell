@@ -8,7 +8,9 @@ Tarbell project configuration
 # May Lane County sales
 # SPREADSHEET_KEY = "1xJFcHYk5Devh-_a53nV1qk-iDsbQTrGFvN5aeDTXSfI"
 # Eugene building permits
-SPREADSHEET_KEY = "1eKM5T3WxnDCOPRgpjmzSZ-GEVUoDt6ddhk6y80CNL0c"
+# SPREADSHEET_KEY = "1eKM5T3WxnDCOPRgpjmzSZ-GEVUoDt6ddhk6y80CNL0c"
+# Springfield building permits
+SPREADSHEET_KEY = "1qmpA32wQjlk27xI5qrq7Hl3DUqg1ltFgiRC6AqFJn7E"
 
 # Exclude these files from publication
 EXCLUDES = ["*.md", "requirements.txt"]
@@ -45,3 +47,15 @@ DEFAULT_CONTEXT = {
     'name': 'blue_chip_tarbell',
     'title': 'Blue Chip real estate data'
 }
+
+# Add a new route
+from flask import Blueprint, g, render_template, Response
+
+blueprint = Blueprint('blue_chip_tarbell', __name__)
+
+@blueprint.route('/permits/')
+def formatted_permits():
+    context = g.current_site.get_context()
+    content = render_template('permits/index.html',  **context)
+    response = Response(content)
+    return response
