@@ -1,4 +1,4 @@
 {% for item in data %}
-{% if loop.changed(item.Permit_Type) %}<p><strong>{{ item.Permit_Type }}</strong></p>{% endif %}
+{% if loop.changed(item.Permit_Type) %}<p><strong>{{ item.Permit_Type }}</strong></p>{% endif %}{% if item.Situs_Address != ", " %}
 <p><strong>{{ item.Owner_Name|title }}:</strong> {{ item.Situs_Address|title }}: {{ item.Description }}: {{ item.Project_Cost }}.</p>
-{% endfor %}
+{% endif %}{% endfor %}
