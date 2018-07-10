@@ -10,7 +10,9 @@ Tarbell project configuration
 # Eugene building permits
 # SPREADSHEET_KEY = "1eKM5T3WxnDCOPRgpjmzSZ-GEVUoDt6ddhk6y80CNL0c"
 # Springfield building permits
-SPREADSHEET_KEY = "1qmpA32wQjlk27xI5qrq7Hl3DUqg1ltFgiRC6AqFJn7E"
+# SPREADSHEET_KEY = "1qmpA32wQjlk27xI5qrq7Hl3DUqg1ltFgiRC6AqFJn7E"
+# Lane County building permits
+SPREADSHEET_KEY = "1YlfgCOPl2tNLrbcLKLXCtrAaKYeqRZILz_PwIQGtpng"
 
 # Exclude these files from publication
 EXCLUDES = ["*.md", "requirements.txt"]
@@ -57,5 +59,12 @@ blueprint = Blueprint('blue_chip_tarbell', __name__)
 def formatted_permits():
     context = g.current_site.get_context()
     content = render_template('permits/index.html',  **context)
+    response = Response(content)
+    return response
+
+@blueprint.route('/lane_permits/')
+def formatted_lane_permits():
+    context = g.current_site.get_context()
+    content = render_template('lane_permits/index.html',  **context)
     response = Response(content)
     return response
