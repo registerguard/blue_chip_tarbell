@@ -30,6 +30,11 @@ def main():
 
             cleaned_data.append(row)
 
+            owner = row['Owner Name']
+            owner = re.sub(r' ([A-Z])( |$)', r' \1.\2', owner)
+            row['Owner Name'] = owner
+            print(row['Owner Name'])
+
     # write it out to a new file
     with open('cleaned.csv', 'wb') as out_file:
         writer = csv.DictWriter(out_file, fieldnames=reader.fieldnames)
