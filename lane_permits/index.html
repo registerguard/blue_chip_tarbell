@@ -1,4 +1,4 @@
 {% for item in data %}{% if item.Situs_Address != ", " %}
 {% if loop.changed(item.Permit_Type) %}{% if not loop.first %}<p></p>{% endif %}<p><strong>{{ item.Permit_Type }}</strong><br>{% else %}<p>{% endif %}
-<strong>{{ item.Owner_Name|title }}:</strong> {{ item.Situs_Address|title }}: {{ item.Description }}: {{ item.Project_Cost }}.</p>
+<strong>{{ item.Owner_Name|title }}:</strong> {{ item.Situs_Address|title }}: {{ item.Description }}{% if item.Project_Cost != "$0.00"%}: {{ item.Project_Cost }}{% endif %}.</p>
 {% endif %}{% endfor %}
