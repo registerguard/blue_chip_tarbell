@@ -5,12 +5,6 @@ Tarbell project configuration
 """
 
 # Google spreadsheet key
-# May Lane County sales
-# SPREADSHEET_KEY = "1xJFcHYk5Devh-_a53nV1qk-iDsbQTrGFvN5aeDTXSfI"
-# Eugene building permits
-# SPREADSHEET_KEY = "1eKM5T3WxnDCOPRgpjmzSZ-GEVUoDt6ddhk6y80CNL0c"
-# Springfield building permits
-# SPREADSHEET_KEY = "1qmpA32wQjlk27xI5qrq7Hl3DUqg1ltFgiRC6AqFJn7E"
 # Lane County building permits
 SPREADSHEET_KEY = "1YlfgCOPl2tNLrbcLKLXCtrAaKYeqRZILz_PwIQGtpng"
 
