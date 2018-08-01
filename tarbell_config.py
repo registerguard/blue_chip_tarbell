@@ -65,3 +65,10 @@ def formatted_lane_permits():
     content = render_template('lane_permits/index.html',  **context)
     response = Response(content)
     return response
+
+@blueprint.route('/property_sales/')
+def formatted_property_sales():
+    context = g.current_site.get_context()
+    content = render_template('property_sales/index.html',  **context)
+    response = Response(content)
+    return response

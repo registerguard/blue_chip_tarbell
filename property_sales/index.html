@@ -1,0 +1,4 @@
+{% for item in data %}{% if item.Address != ", " %}
+{% if loop.changed(item.Category) %}{% if not loop.first %}<p></p>{% endif %}<p><strong>{{ item.Category }}</strong><br>{% else %}<p>{% endif %}
+<strong>{{ item.Seller|title }}:</strong> to {{ item.Buyer|title }}: {{ item.Address|title }}{% if item.Sales_Price != "$0.00"%}: {{ item.Sales_Price }}{% endif %}.</p>
+{% endif %}{% endfor %}
