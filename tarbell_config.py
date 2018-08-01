@@ -6,7 +6,10 @@ Tarbell project configuration
 
 # Google spreadsheet key
 # Lane County building permits
-SPREADSHEET_KEY = "1YlfgCOPl2tNLrbcLKLXCtrAaKYeqRZILz_PwIQGtpng"
+# SPREADSHEET_KEY = "1YlfgCOPl2tNLrbcLKLXCtrAaKYeqRZILz_PwIQGtpng"
+
+# Lane County property sales
+SPREADSHEET_KEY = "1u0ZK2uxgvWUTn_sI7OBGdC-mflXj3k3CC2y2QQmDdS0"
 
 # Exclude these files from publication
 EXCLUDES = ["*.md", "requirements.txt"]
