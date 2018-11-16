@@ -8,7 +8,8 @@ import re
 
 def main():
     cleaned_data = []
-    with open('RG all PRC Report JULY 2018 - data.csv', 'r') as f:
+    # TODO: Use argparse like https://github.com/newsdev/ap-precinct-parser
+    with open('RG monthly All PRC Aug 2018 - Sheet1.csv', 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
             addr = row['Address']
@@ -35,6 +36,10 @@ def main():
             owner = re.sub(r' ([A-Z])( |$)', r' \1.\2', owner)
             row['Buyer'] = owner
             print(row['Buyer'])
+
+            sales_price = row['Sales Price']
+            sales_price = sales_price.strip()
+            row['Sales Price'] = sales_price
 
             # Hey! This goes last, after all the clean-ups!
             cleaned_data.append(row)

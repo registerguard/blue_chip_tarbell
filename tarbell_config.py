@@ -9,7 +9,7 @@ Tarbell project configuration
 # SPREADSHEET_KEY = "1YlfgCOPl2tNLrbcLKLXCtrAaKYeqRZILz_PwIQGtpng"
 
 # Lane County property sales
-SPREADSHEET_KEY = "1Y0tWZBXu5BP3-ocoFI9__jZ_4VVKXohJx0nP-oLPka0"
+SPREADSHEET_KEY = "1e2_Eee3KOrk6Llbz-RfbwFYbnUyr9KWsToXfPxj_4qI"
 
 # Exclude these files from publication
 EXCLUDES = ["*.md", "requirements.txt"]

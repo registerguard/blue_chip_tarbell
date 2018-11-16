@@ -13,8 +13,9 @@ Quick start
 1. Organize (sort by Category, ascending; Dollar value, descending; Permit date ascending).
 1. Download as .csv to clean locally with `clean_data_property_sales.py` script in `_script` directory.
 1. Upload `cleaned_property_sales.csv` to Google sheets to use as source for Tarbell app run locally.
-1. Publish Google Sheet to web, share with rg Google account, add id to Tarbell config.
+1. Publish Google Sheet to web, share with rg Google account, add id to Tarbell `tarbell_config.py`.
 1. Change type of Price column to Format > Number > Plain text in Google Sheet that Tarbell is using.
+1. Make sure you're requesting the correct Tarbell route/URL (see `tarbell_config.py` for the possibilities) and that column and template variable names match. 
 1. View source of the local Tarbell result from browser and cut-and-paste into NCS HTML editor.
 
 Notes
