@@ -9,7 +9,7 @@ import re
 def main():
     cleaned_data = []
     # TODO: Use argparse like https://github.com/newsdev/ap-precinct-parser
-    with open('RG monthly All PRC Aug 2018 - Sheet1.csv', 'r') as f:
+    with open('Copy of RG monthly all PRC Sept 2018 - Sheet1.csv', 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
             addr = row['Address']
