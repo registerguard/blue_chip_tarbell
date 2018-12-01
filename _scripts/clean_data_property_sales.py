@@ -2,14 +2,18 @@
 # coding: utf-8
 
 import csv
+import json
 import re
+
+with open("../secrets.json") as f:
+    secrets = json.loads(f.read())
 
 # https://codereview.stackexchange.com/questions/145511/performing-a-regex-search-and-saving-results-to-csv
 
 def main():
     cleaned_data = []
     # TODO: Use argparse like https://github.com/newsdev/ap-precinct-parser
-    with open('Copy of RG monthly all PRC Sept 2018 - Sheet1.csv', 'r') as f:
+    with open(secrets['LANE_COUNTY_SALES_DATA_CSV'], 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
             addr = row['Address']
