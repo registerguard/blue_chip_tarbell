@@ -4,12 +4,16 @@
 Tarbell project configuration
 """
 
+import json
+with open("secrets.json") as f:
+    secrets = json.loads(f.read())
+
 # Google spreadsheet key
 # Lane County building permits
 # SPREADSHEET_KEY = "1YlfgCOPl2tNLrbcLKLXCtrAaKYeqRZILz_PwIQGtpng"
 
 # Lane County property sales
-SPREADSHEET_KEY = "1km3G0pcYQtpieH37sS_wf-2ANXPwj6IuSRHcIyu4wK4"
+SPREADSHEET_KEY = secrets['SPREADSHEET_KEY']
 
 # Exclude these files from publication
 EXCLUDES = ["*.md", "requirements.txt"]
