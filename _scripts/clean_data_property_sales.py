@@ -14,7 +14,9 @@ def main():
     cleaned_data = []
     # TODO: Use argparse like https://github.com/newsdev/ap-precinct-parser
     with open(secrets['LANE_COUNTY_SALES_DATA_CSV'], 'r') as f:
-        reader = csv.DictReader(f)
+        # https://stackoverflow.com/questions/27432162/python-how-to-trim-trailing-spaces-in-csv-dictreader-keys#answer-27432264
+        header = [h.strip() for h in f.next().split(',')]
+        reader = csv.DictReader(f, fieldnames=header)
         for row in reader:
             addr = row['Address']
             addr = re.sub(r' DR,([A-Z])', r' DRIVE,\1', addr, 1)
