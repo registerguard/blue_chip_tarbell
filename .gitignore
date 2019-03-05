@@ -1,5 +1,6 @@
 *.pyc
 .DS_Store
+.vscode
 quickstart.py
 secrets.json
 _scripts/*.csv
