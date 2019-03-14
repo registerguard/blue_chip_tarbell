@@ -4,6 +4,7 @@
 Tarbell project configuration
 """
 
+import csv
 import json
 with open("secrets.json") as f:
     secrets = json.loads(f.read())
@@ -70,9 +71,22 @@ def formatted_lane_permits():
     response = Response(content)
     return response
 
+# Let's just go from a local .csv file to flask:
+# https://first-news-app.readthedocs.io/en/latest/
+# http://2015.compjour.org/homework/flask-app-101/
+
+def get_csv():
+    csv_path = './_scripts/cleaned_property_sales.csv'
+    csv_file = open(csv_path, 'r')
+    csv_obj = csv.DictReader(csv_file)
+    csv_list = list(csv_obj)
+    return csv_list
+
 @blueprint.route('/property_sales/')
 def formatted_property_sales():
-    context = g.current_site.get_context()
-    content = render_template('property_sales/index.html',  **context)
+    # context = g.current_site.get_context()
+    # content = render_template('property_sales/index.html',  **context)
+    object_list = get_csv()
+    content = render_template('property_sales/index.html',  cleaned_property_sales=object_list)
     response = Response(content)
     return response

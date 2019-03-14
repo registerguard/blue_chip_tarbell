@@ -15,7 +15,7 @@ def main():
     # TODO: Use argparse like https://github.com/newsdev/ap-precinct-parser
     with open(secrets['LANE_COUNTY_SALES_DATA_CSV'], 'r') as f:
         # https://stackoverflow.com/questions/27432162/python-how-to-trim-trailing-spaces-in-csv-dictreader-keys#answer-27432264
-        header = [h.strip() for h in f.next().split(',')]
+        header = [h.strip().replace(' ', '_') for h in f.next().split(',')]
         reader = csv.DictReader(f, fieldnames=header)
         for row in reader:
             addr = row['Address']
@@ -43,9 +43,10 @@ def main():
             row['Buyer'] = owner
             print(row['Buyer'])
 
-            sales_price = row['Sales Price']
-            sales_price = sales_price.strip()
-            row['Sales Price'] = sales_price
+            sales_price = row['Sales_Price']
+            # Get rid of space between '$' and amount.
+            sales_price = sales_price.strip().replace(' ', '')
+            row['Sales_Price'] = sales_price
 
             # Hey! This goes last, after all the clean-ups!
             cleaned_data.append(row)
