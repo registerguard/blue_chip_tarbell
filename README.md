@@ -11,8 +11,9 @@ Quick start
 1. In Google Drive `Blue Chip/YYYY/`, create `Month` and `Month/originals` folders.
 1. Upload .xls to Google Sheets to the appropriate `originals` to view, open with Google Sheets and move the Google Sheets-generated copy up out of the "originals" directory to the parent [Month] directory.  
 ~~1. Create `Category` column from subhead rows ("Commercial Improved", "Commerical Vacant", etc.)~~
+1. Delete first five rows of header crud.
 1. Using " " as a delimiter, `JOIN` Column A ("Category) and Column B ("Vacant / Improved") into a third column.  
-e.g., `=JOIN("-", A1:A100, B1:B100)`  
+e.g., `=JOIN(" ", A1:A100, B1:B100)`  
 Copy and Paste special => Paste values only Column C data into Column C. Give Column C a column header of "Category". Delete Columns A & B. View => Freeze first row.
 1. Organize (sort by Category, ascending; Sales Price/Dollar Value, descending; Sales Date/Permit Date, ascending).
 1. Download as .csv and copy to local `_script` directory so as to clean locally with `clean_data_property_sales.py` script in same `_script` directory. In order to do that you'll first have to update the `LANE_COUNTY_SALES_DATA_CSV` file source file name in `secrets.json`, then run script.
