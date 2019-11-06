@@ -12,7 +12,7 @@ Quick start
 1. Upload .xls to Google Sheets to the appropriate `originals` to view, open with Google Sheets and move the Google Sheets-generated copy up out of the "originals" directory to the parent [Month] directory.  
 ~~1. Create `Category` column from subhead rows ("Commercial Improved", "Commerical Vacant", etc.)~~
 1. Delete first five rows of header crud.
-1. Using " " as a delimiter, `JOIN` Column A ("Category) and Column B ("Vacant / Improved") into a third column.  
+1. Using " " as a delimiter, `JOIN` Column A ("Category) and Column B ("Vacant / Improved") into a third column, Column C.  
 e.g., `=JOIN(" ", A2, B2)`  
 Copy and Paste special => Paste values only Column C data into Column C. Give Column C a column header of "Category". Delete Columns A & B. View => Freeze first row.
 1. Organize (sort by Category, ascending; Sales Price/Dollar Value, descending; Sales Date/Permit Date, ascending).
