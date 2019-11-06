@@ -20,9 +20,9 @@ Copy and Paste special => Paste values only Column C data into Column C. Give Co
 ~~1. Upload `cleaned_property_sales.csv` to Google Sheets. Open with Google Sheets and use converted file as source for Tarbell app run locally.~~
 ~~1. Publish Google Sheet to web, Share with `rgnews registerguard` Google account, update `SPREADSHEET_KEY` id in `secrets.json`.~~
 ~~1. Change type of Price column to Format > Number > Plain text in Google Sheet that Tarbell is using. (<== Not sure that this step is necessary, especially if you Freeze the header row ... )~~
-1. Fire up the local Tarbell server (Don't forget to activate `workon` the right virtualenv for Tarbell to work.) 
+1. Fire up the local Tarbell server (`tarbell serve`). Don't forget to activate via `workon` the right virtualenv for Tarbell to work.  
 1. Make sure you're requesting the correct Tarbell route/URL (see `tarbell_config.py` for the possibilities) and that column and template variable names match. For Lane County property sales it's `/property_sales`.
-1. View source of the local Tarbell result from browser and cut-and-paste into NCS HTML editor. Add "Lane County property sales from [month] [starting date number] through [ending date number], [year]." line at top of body copy and "Lane County [Month] [Year] property sales" headline and a Taxonomy of `Permanent Topic > Local Business > Names & Faces`.
+1. View source of the local Tarbell result from browser and cut-and-paste into NCS HTML editor. Add "Lane County property sales from [month] [starting date number] through [ending date number], [year]." line at top of body copy and "Lane County [Month] [Year] property sales" headline and a Taxonomy of `Permanent Topic > Local Business > Names & Faces`. In MWC/NCS, set the `Publication` date to the first Tuesday of the month. Publish using the MWC/NCS `Online publication time: Use publication` option.
 
 Notes
 --------------
